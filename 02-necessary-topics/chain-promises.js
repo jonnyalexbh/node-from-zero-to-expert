@@ -47,12 +47,13 @@ let getSalary = employee => {
   });
 }
 
-getEmployee(3).then(employee => {
-  getSalary(employee).then(resp => {
-    console.log(`the salary of the ${resp.name} is of ${resp.salary}`);
-  }, error => {
-    console.log(error);
+getEmployee(2)
+  .then(employee => {
+    return getSalary(employee);
   })
-}, error => {
-  console.log(error);
-});
+  .then(resp => {
+    console.log(`the salary of the ${resp.name} is of ${resp.salary}`);
+  })
+  .catch(err => {
+    console.log(err);
+  });
