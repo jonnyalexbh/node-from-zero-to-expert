@@ -1,5 +1,8 @@
 const { createFile } = require('./multiply');
-let base = 4;
+
+let argv = process.argv;
+let param = argv[2];
+let base = param.split('=')[1];
 
 createFile(base)
   .then(file => console.log(`file created ${file}`))
