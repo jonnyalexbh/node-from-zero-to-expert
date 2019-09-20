@@ -19,7 +19,8 @@ switch (command) {
     console.log(task);
     break
   case 'update':
-    console.log('update by doing');
+    let updated = toDo.update(argv.description, argv.completed);
+    console.log(updated);
     break
   default:
     console.log('unrecognized command');
