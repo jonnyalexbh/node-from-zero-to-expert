@@ -1,29 +1,25 @@
+const description = {
+  demand: true,
+  alias: 'd',
+  desc: 'description of the task to be done'
+};
+
+const completed = {
+  default: true,
+  alias: 'c',
+  desc: 'mark the task completed or pending'
+};
+
 const argv = require('yargs')
   .command('create', 'create an item to do', {
-    description: {
-      demand: true,
-      alias: 'd',
-      desc: 'description of the task to be done'
-    }
+    description
   })
   .command('update', 'update the completed status of a task', {
-    description: {
-      demand: true,
-      alias: 'd',
-      desc: 'description of the task to be done'
-    },
-    completed: {
-      default: true,
-      alias: 'c',
-      desc: 'mark the task completed or pending'
-    }
+    description,
+    completed
   })
   .command('remove', 'delete a task', {
-    description: {
-      demand: true,
-      alias: 'd',
-      desc: 'description of the task to be done'
-    },
+    description
   })
   .argv
 
