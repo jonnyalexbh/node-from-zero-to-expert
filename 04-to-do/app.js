@@ -22,6 +22,10 @@ switch (command) {
     let updated = toDo.update(argv.description, argv.completed);
     console.log(updated);
     break
+  case 'remove':
+    let erased = toDo.remove(argv.description);
+    console.log(erased);
+    break;
   default:
     console.log('unrecognized command');
 }
