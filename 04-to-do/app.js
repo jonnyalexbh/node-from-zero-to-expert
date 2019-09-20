@@ -1,6 +1,5 @@
 const argv = require('./config/yargs').argv;
-
-console.log(argv);
+const toDo = require('./tasks-to-do');
 
 let command = argv._[0];
 
@@ -9,7 +8,8 @@ switch (command) {
     console.log('show all tasks to do');
     break
   case 'create':
-    console.log('create by doing');
+    let task = toDo.create(argv.description);
+    console.log(task);
     break
   case 'update':
     console.log('update by doing');
