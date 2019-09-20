@@ -30,6 +30,12 @@ const create = (description) => {
   return toDo;
 }
 
+const getList = () => {
+  loadDb();
+  return listToDo;
+}
+
 module.exports = {
-  create
+  create,
+  getList
 }
