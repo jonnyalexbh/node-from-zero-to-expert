@@ -3,18 +3,15 @@ const app = express()
 
 app.use(express.static(__dirname + '/public'));
 
-// app.get('/', function (req, res) {
-//   let output = {
-//     name: 'jonnyalex.bh',
-//     phone: 2224567,
-//     enabled: true
-//   }
-//   res.send(output)
-// })
+// express HBS engine
+app.set('view engine', 'hbs');
 
-// app.get('/data', function (req, res) {
-//   res.send('Hello World')
-// })
+app.get('/', function (req, res) {
+  res.render('home', {
+    name: 'jonnyalexbh',
+    year: new Date().getFullYear()
+  });
+})
 
 app.listen(3000, () => {
   console.log('listening to requests in the port 3000');
