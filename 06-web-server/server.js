@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 
 const hbs = require('hbs');
+require('./hbs/helpers');
 
 app.use(express.static(__dirname + '/public'));
 
@@ -11,15 +12,12 @@ app.set('view engine', 'hbs');
 
 app.get('/', function (req, res) {
   res.render('home', {
-    name: 'jonnyalexbh',
-    year: new Date().getFullYear()
+    name: 'jonnyalexbh'
   });
 })
 
 app.get('/about', function (req, res) {
-  res.render('about', {
-    year: new Date().getFullYear()
-  });
+  res.render('about');
 })
 
 app.listen(3000, () => {
