@@ -4,6 +4,8 @@ const app = express()
 const hbs = require('hbs');
 require('./hbs/helpers');
 
+const port = process.env.PORT || 3000;
+
 app.use(express.static(__dirname + '/public'));
 
 // express HBS engine
@@ -20,6 +22,6 @@ app.get('/about', function (req, res) {
   res.render('about');
 })
 
-app.listen(3000, () => {
-  console.log('listening to requests in the port 3000');
+app.listen(port, () => {
+  console.log(`listening to requests in the port ${port}`);
 })
