@@ -28,6 +28,8 @@
     socket.emit('sendMessage', {
       user: 'jonnyalexbh',
       message: 'Hola Mundo'
+    }, function (resp) {
+      console.log('server response', resp);
     })
   </script>
 

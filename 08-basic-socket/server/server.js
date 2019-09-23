@@ -21,8 +21,17 @@ io.on('connection', (client) => {
   });
 
   // listen to the client
-  client.on('sendMessage', (message) => {
+  client.on('sendMessage', (message, callback) => {
     console.log(message);
+    if (message.user) {
+      callback({
+        resp: 'all went well!'
+      });
+    } else {
+      callback({
+        resp: 'everything went wrong!!!!!!!!!!!!'
+      });
+    }
   });
 });
 
