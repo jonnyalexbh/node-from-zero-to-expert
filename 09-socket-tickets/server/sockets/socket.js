@@ -1,4 +1,7 @@
 const { io } = require('../server');
+const { TicketControl } = require('../classes/ticket-control');
+
+const ticketControlticket = new TicketControl();
 
 io.on('connection', (client) => {
   console.log('logged in user');
