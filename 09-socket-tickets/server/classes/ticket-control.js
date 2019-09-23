@@ -29,7 +29,7 @@ class TicketControl {
 
   recordFile() {
     let jsonData = {
-      latest: this.latest = 0,
+      latest: this.latest,
       today: this.today
     }
 

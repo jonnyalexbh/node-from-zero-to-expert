@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Nuevo Ticket</title>
+  <title>New Ticket</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -18,18 +18,23 @@
     <tr>
       <td>
         <span id="lblNuevoTicket">
-          Cargando...
+          Loading...
         </span>
       </td>
     </tr>
     <tr>
       <td>
         <button class="btn btn-secondary btn-lg">
-          Generar nuevo ticket
+          Generate new ticket
         </button>
       </td>
     </tr>
   </table>
+
+  <script src="js/libs/jquery.min.js"></script>
+
+  <script src="socket.io/socket.io.js"></script>
+  <script src="js/socket.new-ticket.js"></script>
 
 </body>
 
