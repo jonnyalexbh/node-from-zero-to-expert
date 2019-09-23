@@ -8,16 +8,20 @@ io.on('connection', (client) => {
   });
 
   // listen to the client
-  client.on('sendMessage', (message, callback) => {
-    console.log(message);
-    if (message.user) {
-      callback({
-        resp: 'all went well!'
-      });
-    } else {
-      callback({
-        resp: 'everything went wrong!!!!!!!!!!!!'
-      });
-    }
+  client.on('sendMessage', (data, callback) => {
+
+    console.log(data);
+    client.broadcast.emit('sendMessage', data);
+
+    // if (message.user) {
+    //   callback({
+    //     resp: 'all went well!'
+    //   });
+    // } else {
+    //   callback({
+    //     resp: 'everything went wrong!!!!!!!!!!!!'
+    //   });
+    // }
+
   });
 });

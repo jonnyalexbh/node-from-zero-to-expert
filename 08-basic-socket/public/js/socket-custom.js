@@ -16,3 +16,8 @@ socket.emit('sendMessage', {
 }, function (resp) {
   console.log('server response', resp);
 })
+
+// listen to information
+socket.on('sendMessage', function (message) {
+  console.log('Server:', message);
+});
