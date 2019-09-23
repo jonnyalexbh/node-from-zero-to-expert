@@ -15,6 +15,10 @@ let io = socketIO(server);
 
 io.on('connection', (client) => {
   console.log('logged in user');
+
+  client.on('disconnect', () => {
+    console.log('Usuario desconectado');
+  });
 });
 
 server.listen(port, (err) => {
