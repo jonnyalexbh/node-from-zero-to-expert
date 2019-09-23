@@ -2,7 +2,7 @@
   "name": "08-basic-socket",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server/server.js"
   },
