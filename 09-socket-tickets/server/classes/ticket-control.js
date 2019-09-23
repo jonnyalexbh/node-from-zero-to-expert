@@ -8,14 +8,26 @@ class TicketControl {
     let data = require('../data/data.json');
 
     if (data.today === this.today) {
-
+      this.latest = data.latest;
     } else {
       this.resetCount();
     }
 
   }
 
+  nextTicket() {
+    this.latest += 1;
+    this.recordFile();
+    return `Ticket ${this.latest}`;
+  }
+
   resetCount() {
+    this.latest = 0;
+    console.log('The system has been initialized');
+    this.recordFile();
+  }
+
+  recordFile() {
     let jsonData = {
       latest: this.latest = 0,
       today: this.today
@@ -23,9 +35,6 @@ class TicketControl {
 
     let jsonDataString = JSON.stringify(jsonData);
     fs.writeFileSync('./server/data/data.json', jsonDataString);
-
-    console.log('the system has been initialized');
-
   }
 }
 
