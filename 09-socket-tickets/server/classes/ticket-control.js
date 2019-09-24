@@ -21,6 +21,10 @@ class TicketControl {
     return `Ticket ${this.latest}`;
   }
 
+  getLastTicket() {
+    return `Ticket ${this.latest}`;
+  }
+
   resetCount() {
     this.latest = 0;
     console.log('The system has been initialized');
