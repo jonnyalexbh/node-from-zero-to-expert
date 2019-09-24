@@ -12,12 +12,14 @@ class TicketControl {
     this.latest = 0;
     this.today = new Date().getDate();
     this.tickets = [];
+    this.latest4 = [];
 
     let data = require('../data/data.json');
 
     if (data.today === this.today) {
       this.latest = data.latest;
       this.tickets = data.tickets;
+      this.latest4 = data.latest4;
     } else {
       this.resetCount();
     }
@@ -37,9 +39,34 @@ class TicketControl {
     return `Ticket ${this.latest}`;
   }
 
+  attendTicket(desk) {
+    if (this.tickets.length === 0) {
+      return 'there are not tickets';
+    }
+
+    let numTicket = this.tickets[0].number;
+    this.tickets.shift();
+
+    let attendTicket = new Ticket(numTicket, desk);
+
+    this.latest4.unshift(attendTicket);
+
+    if (this.latest4.length > 4) {
+      this.latest4.splice(-1, 1); // borra el último
+    }
+
+    console.log('Last 4');
+    console.log(this.latest4);
+
+    this.recordFile();
+    return attendTicket;
+  }
+
   resetCount() {
     this.latest = 0;
     this.tickets = [];
+    this.latest4 = [];
+
     console.log('The system has been initialized');
     this.recordFile();
   }
@@ -48,7 +75,8 @@ class TicketControl {
     let jsonData = {
       latest: this.latest,
       today: this.today,
-      tickets: this.tickets
+      tickets: this.tickets,
+      latest4: this.latest4
     }
 
     let jsonDataString = JSON.stringify(jsonData);
