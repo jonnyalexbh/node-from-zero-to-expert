@@ -15,4 +15,20 @@ io.on('connection', (client) => {
     actual: ticketControlticket.getLastTicket()
   });
 
+  client.on('attendTicket', (data, callback) => {
+
+    if (!data.desk) {
+      return callback({
+        err: true,
+        message: 'the desk is necessary'
+      });
+    }
+
+    let attendTicket = ticketControlticket.attendTicket(data.desk);
+    callback(attendTicket);
+
+    // update / notify changes in the LAST 4
+
+  });
+
 });
