@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Pantalla del publico</title>
+  <title>Audience Screen</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -22,7 +22,7 @@
       <td valign="middle" class="ticket-actual">
         <span id="lblTicket1" class="ticket-actual-numero">Ticket W</span>
         <br>
-        <span id="lblEscritorio1" class="ticket-actual-escritorio">Escritorio W</span>
+        <span id="lblDesk1" class="ticket-actual-escritorio">Desk W</span>
       </td>
       <td>
         <table>
@@ -30,21 +30,21 @@
             <td>
               <span id="lblTicket2" class="ticket-secundario">Ticket X</span>
               <br>
-              <span id="lblEscritorio2">Escritorio X</span>
+              <span id="lblDesk2">Desk X</span>
             </td>
           </tr>
           <tr>
             <td>
               <span id="lblTicket3" class="ticket-secundario">Ticket Y</span>
               <br>
-              <span id="lblEscritorio3">Escritorio Y</span>
+              <span id="lblDesk3">Desk Y</span>
             </td>
           </tr>
           <tr>
             <td>
               <span id="lblTicket4" class="ticket-secundario">Ticket Z</span>
               <br>
-              <span id="lblEscritorio4">Escritorio Z</span>
+              <span id="lblDesk4">Desk Z</span>
             </td>
           </tr>
         </table>
@@ -52,6 +52,10 @@
     </tr>
   </table>
 
+  <script src="js/libs/jquery.min.js"></script>
+
+  <script src="socket.io/socket.io.js"></script>
+  <script src="js/socket.public.js"></script>
 
 </body>
 

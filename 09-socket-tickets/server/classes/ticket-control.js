@@ -39,6 +39,10 @@ class TicketControl {
     return `Ticket ${this.latest}`;
   }
 
+  getlatest4() {
+    return this.latest4;
+  }
+
   attendTicket(desk) {
     if (this.tickets.length === 0) {
       return 'there are not tickets';

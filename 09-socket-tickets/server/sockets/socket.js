@@ -12,7 +12,8 @@ io.on('connection', (client) => {
   });
 
   client.emit('actualState', {
-    actual: ticketControlticket.getLastTicket()
+    actual: ticketControlticket.getLastTicket(),
+    latest4: ticketControlticket.getlatest4()
   });
 
   client.on('attendTicket', (data, callback) => {
