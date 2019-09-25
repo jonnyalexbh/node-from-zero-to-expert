@@ -29,6 +29,9 @@ io.on('connection', (client) => {
     callback(attendTicket);
 
     // update / notify changes in the LAST 4
+    client.broadcast.emit('latest4', {
+      latest4: ticketControlticket.getlatest4()
+    });
 
   });
 

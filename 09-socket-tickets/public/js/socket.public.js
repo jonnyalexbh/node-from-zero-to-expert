@@ -18,6 +18,13 @@ socket.on('actualState', function (data) {
   updateHtml(data.latest4);
 });
 
+socket.on('latest4', function (data) {
+  var audio = new Audio('audio/new-ticket.mp3');
+  audio.play();
+
+  updateHtml(data.latest4);
+});
+
 function updateHtml(latest4) {
   for (var i = 0; i <= latest4.length - 1; i++) {
     lblTickets[i].text('Ticket ' + latest4[i].number);
