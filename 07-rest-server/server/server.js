@@ -1,8 +1,9 @@
 require('./config');
 
-const express = require('express')
-const app = express()
-const bodyParser = require('body-parser')
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -38,6 +39,14 @@ app.put('/user/:id', function (req, res) {
 app.delete('/user', function (req, res) {
   res.json('delete user')
 })
+
+mongoose.connect('mongodb://localhost:27017/jabh', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}, (err, res) => {
+  if (err) throw err;
+  console.log('online database');
+});
 
 app.listen(process.env.PORT, () => {
   console.log('listening port: ', process.env.PORT);
