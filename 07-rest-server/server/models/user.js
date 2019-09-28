@@ -22,8 +22,7 @@ let userSchema = new Schema({
   },
   role: {
     type: String,
-    default: 'USER_ROLE',
-    enum: rolesValidos
+    default: 'USER_ROLE'
   },
   state: {
     type: Boolean,
